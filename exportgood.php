@@ -61,7 +61,7 @@ $exportform = new qcreate_export_good_questions_form($thispageurl,
 if ($fromform = $exportform->get_data()) {   // Filename.
     $thiscontext = $contexts->lowest();
 
-    if (! is_readable($CFG->dirroot."/question/format/$fromform->format/format.php")) {
+    if (! is_readable($CFG->dirroot."/question/format/'.$fromform->format.'/format.php")) {
         print_error('unknowformat', '', '', $fromform->format);;
     }
     $withcategories = 'nocategories';
